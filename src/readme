@@ -1,0 +1,32 @@
+Neste projeto utilizei as tecnologias e bibliotecas que mais vejo serem empregadas nos projetos que
+acompanhei durante toda a minha jornada em desenvolvimento mobile com React Native.
+
+Fiz o uso do react-navigation por já vir usando a tempos e me sentir confortável com ela. Apesar disso,
+não tenho limitações ou aversão a aprender as demais tecnologias para navegação entre telas.
+
+Na tela InitialScreen eu tentei seguir o design do aplicativo original para IOS. 
+O Botão de seguir é como uma simulação de quando o app identifica que tem algo armazenado na memória 
+do celular e passa para a tela seguinte.
+
+A tela que vem a seguir, não possui header, a fim de seguir original o aplicativo e também trazer maior
+espaço para o conteúdo se acomodar no dispositivo.
+Utilizei sempre de opções "flexíveis", para que o aplicativo se ajuste de forma muito similar em qualquer
+tamanho de tela. Para isso, o emprego do flex-box foi adotado.
+
+Como demonstração dos principais pontos, criei os botões de trocar a cor da tag, criei o botão de 
+copiar a assinatura ( não entendi o que exatamente seria, apenas segui o app original) e o botão de voltar
+para a tela inicial, onde, neste caso, não é desejável que seja o comando de ir para a tela inicial e sim,
+apenas "voltar". Isso faz toda diferença no desempenho do aplicativo, tendo em vista que a stack é
+"limpada", em vez de novamente sobrepor tela sobre tela e ir acumulando o histórica da rota sem necessidade.
+
+Em projetos maiores eu gosto de deixar tudo bem dividido em componentes para deixar o código o mais limpo
+e legível possível. Neste, não senti necessidade de separar muito visto que está limpo e pequeno o código.
+
+Outra coisa que gosto de fazer é, para cada tela, separar em uma pasta onde terá o arquivo da tela em si e 
+um arquivo de estilos, desta forma sempre que eu for importar os estilos, apenas precisa de "./styles".
+
+A pasta "navigators" representa o espaço para todas as stacks que poderiam entrar no aplicativo, e neste caso,
+usei apenas a stack-navigator, mas caso tivesse tab-navigator e etc, eles entrariam na pasta de navigators
+e seriam chamados no index principal do app.
+
+Tentei mostrar o principal de meu trabalho aqui, prezo pela organização e código claro, bem explicado.
