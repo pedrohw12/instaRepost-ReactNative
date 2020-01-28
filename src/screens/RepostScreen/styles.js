@@ -35,7 +35,7 @@ export const BallsArea = styled.View`
   align-items: center;
 `;
 
-export const Button = styled.TouchableOpacity`
+export const Buttono = styled.TouchableOpacity`
   border-radius: 4px;
   border-width: 1px;
   border-color: #aaa;

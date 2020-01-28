@@ -21,7 +21,6 @@ export default function InitialScreen(props) {
       </Box>
       <ButtonArea>
        <Button title="Seguir" onPress={()=> props.navigation.navigate('RepostScreen')} />
-       <TextInput placeholder="Ler cópia da assinatura" style={{borderWidth: 1}} />
       </ButtonArea>
     
     </Container>

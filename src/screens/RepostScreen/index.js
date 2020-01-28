@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ImageBackground, Clipboard } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { ImageBackground, Clipboard, Button } from 'react-native';
 
 import {  
   Text, 
@@ -7,7 +7,7 @@ import {
   Header, 
   FeaturesBar, 
   BallsArea, 
-  Button, 
+  Buttono, 
   BigButtonsArea, 
   BackButton, 
   RecicleButton, 
@@ -23,11 +23,14 @@ import Post from '../../assets/fotoPerfil.jpg';
 
 import Icon from 'react-native-vector-icons/AntDesign'
 import Icone from 'react-native-vector-icons/Entypo';
+import { TextInput } from 'react-native-gesture-handler';
 
 export default function App(props) {
   const [ color, setColor ] = useState(true);
   const [ modalVisible, setModalVisible ] = useState(false);
   const [ clipboard, setClipboard ] = useState('');
+  const [ address, setAddress ] = useState();
+  const [ photo, setPhoto ] = useState();
 
   function changeColorYellow() {
     setColor(false);
@@ -42,13 +45,17 @@ export default function App(props) {
   }
 
   async function getPostLink() {
-    var texto = await Clipboard.setString('foto.PNG');
+    var texto = await Clipboard.setString(address);
     setClipboard({clipboard: texto})
   }
 
+ 
+
   return (
     <>
-    <ImageBackground source={Post} style={{flex: 3}} />
+    <TextInput placeholder="Link do post" style={{borderWidth: 1}}  onChangeText={(t)=> setAddress(t) } />
+    <Button title="Carregar" onPress={()=> { setPhoto(address)}} />
+    <ImageBackground source={{uri: `${photo}`}} style={{flex: 2}} />
 
     <ShareTag color={color}>
       <Icon name="retweet" size={18} color="#000" /> 
@@ -59,21 +66,21 @@ export default function App(props) {
     <DownBarApp>
       <Header>
         <FeaturesBar>
-          <Button style={{backgroundColor: "#00a8ff"}}>
+          <Buttono style={{backgroundColor: "#00a8ff"}}>
             <Icone name="browser" size={20} color="#fff" />
-          </Button>
-          <Button>
+          </Buttono>
+          <Buttono>
             <Icone name="browser" size={20} color="#ddd" />
-          </Button>
-          <Button>
+          </Buttono>
+          <Buttono>
             <Icone name="browser" size={20} color="#ddd" />
-          </Button>
-          <Button>
+          </Buttono>
+          <Buttono>
            <Icone name="browser" size={20} color="#ddd" />
-          </Button>
-          <Button>
+          </Buttono>
+          <Buttono>
             <Icone name="browser" size={20} color="#ddd" />
-          </Button>
+          </Buttono>
         </FeaturesBar>  
 
         <BallsArea>
