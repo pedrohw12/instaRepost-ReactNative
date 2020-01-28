@@ -977,6 +977,11 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.6.tgz#c7f2ac187c1f25aa8c30d11baa8f4398eca3bb84"
   integrity sha512-PpMoeXwPUoldCRKDuSi+zK5rT+sJTW6ri6RdGPkSKRzU77Q1d9IaR0O5IKvBj0XSdL3p+dcOa05gk35aGDffBQ==
 
+"@react-native-community/react-native-clipboard@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@react-native-community/react-native-clipboard/-/react-native-clipboard-1.0.1.tgz#91ad2e77c54e33de609a23d9be9276f47a96d189"
+  integrity sha512-FeVdKwnujjIJsr3ZdzA/6LH6O+lJPyxjCq+MEtarm6mC6XHSH0YYJhfbL8fn+RlRymwH6ct10u9syIz7GrAn7A==
+
 "@react-navigation/core@^3.5.1":
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-3.5.1.tgz#7a2339fca3496979305fb3a8ab88c2ca8d8c214d"

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Text, Button,  } from 'react-native';
+import { Text, Button, TextInput } from 'react-native';
 
 import { Container, Box, Header, Steps, StepText, ButtonArea } from './styles';
 
@@ -20,7 +20,8 @@ export default function InitialScreen(props) {
         
       </Box>
       <ButtonArea>
-      <Button title="Seguir" onPress={()=> props.navigation.navigate('RepostScreen')} />
+       <Button title="Seguir" onPress={()=> props.navigation.navigate('RepostScreen')} />
+       <TextInput placeholder="Ler cópia da assinatura" style={{borderWidth: 1}} />
       </ButtonArea>
     
     </Container>

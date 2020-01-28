@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ImageBackground } from 'react-native';
+import { ImageBackground, Clipboard } from 'react-native';
 
 import {  
   Text, 
@@ -19,12 +19,15 @@ import {
 } 
 from './styles';
 
+import Post from '../../assets/fotoPerfil.jpg';
+
 import Icon from 'react-native-vector-icons/AntDesign'
 import Icone from 'react-native-vector-icons/Entypo';
 
 export default function App(props) {
   const [ color, setColor ] = useState(true);
-  const [ modalVisible, setModalVisible ] = useState(false)
+  const [ modalVisible, setModalVisible ] = useState(false);
+  const [ clipboard, setClipboard ] = useState('');
 
   function changeColorYellow() {
     setColor(false);
@@ -38,9 +41,14 @@ export default function App(props) {
     setModalVisible(!modalVisible)
   }
 
+  async function getPostLink() {
+    var texto = await Clipboard.setString('foto.PNG');
+    setClipboard({clipboard: texto})
+  }
+
   return (
     <>
-    <ImageBackground source={require('../../assets/fotoPerfil.jpg')} style={{flex: 3}} />
+    <ImageBackground source={Post} style={{flex: 3}} />
 
     <ShareTag color={color}>
       <Icon name="retweet" size={18} color="#000" /> 
@@ -83,7 +91,7 @@ export default function App(props) {
           <Icon name="caretleft" size={20} color="#fff" /> 
         </BackButton>
         <RecicleButton> 
-        <Icon name="retweet" size={20} color="#fff" /> 
+          <Icon name="retweet" size={20} color="#fff" /> 
         </RecicleButton>
         <ThreeDots onPress={() => openModal()}> 
         <Icon name="ellipsis1" size={20} color="#fff" /> 
@@ -93,11 +101,11 @@ export default function App(props) {
 
     {modalVisible && 
     <>
-    <SocialMedia onPress={()=>{}} underlayColor="#ddd">
-      <Text style={{marginTop: 10}}>Copiar assinatura</Text>
+    <SocialMedia onPress={()=>{ getPostLink()}} underlayColor="#ddd">
+      <Text style={{marginTop: 10, fontWeight: 'bold'}}>Copiar assinatura</Text>
     </SocialMedia>
     <SocialMediaCancel onPress={()=> openModal()} underlayColor="#ddd">
-    <Text style={{marginTop: 10}}>Cancelar</Text>
+      <Text style={{marginTop: 10, fontWeight: 'bold'}}>Cancelar</Text>
     </SocialMediaCancel>
     </>
     }
